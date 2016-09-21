@@ -39,11 +39,11 @@ public class DataManager {
 	private DataManager() {
 		
 		try {
-			MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017));
+			MongoClient mongoClient = new MongoClient(new ServerAddress("localhost", 27017)); //default port for MongoDB
 			
 			japiDB = mongoClient.getDB("japi");
 			
-			userCollection = japiDB.getCollection("users");
+			userCollection = japiDB.getCollection("users"); //collection is essentially a JSON document, no concept of tables in MongoDB
 			
 
 		}
