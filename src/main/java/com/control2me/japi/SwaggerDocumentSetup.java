@@ -1,19 +1,23 @@
 package com.control2me.japi;
 
+import io.swagger.jaxrs.config.BeanConfig;
+
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 
-import io.swagger.jaxrs.config.BeanConfig;
+public class SwaggerDocumentSetup extends HttpServlet {
 
-public class SwaggerDocumentSetup extends HttpServlet{
-
+    /**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
+
 	
 	@Override
-	public void init(ServletConfig config) throws ServletException{
-		super.init(config);
-		
+    public void init(ServletConfig config) throws ServletException {
+        super.init(config);
+        
         BeanConfig beanConfig = new BeanConfig();
         beanConfig.setVersion("1.0.0");
         beanConfig.setTitle( "Control 2 Me, General API's" );
@@ -26,5 +30,7 @@ public class SwaggerDocumentSetup extends HttpServlet{
         beanConfig.setResourcePackage( "com.control2me.japi.services" );
         
         beanConfig.setScan(true);
-	}
+    }
+
+	
 }
